@@ -1,13 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rowdies&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #2f607e !important;
+  font-family: Rowdies !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.main {
+  position: relative;
+  bottom: 50%;
+  height: 400px;
+  background-color: #80d7ed;
+  width: 60%;
+  height: 100vh;
+  margin: 0 auto;
 }
+.title {
+  text-align: center;
+}
+.button-container {
+  background: blue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+
+.drum-pad {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin: 2px auto;
+}
+
+.drum-sound {
+  width: 200px;
+  height: 70px;
+  background: red;
+  text-align: center;
+  padding-top: 1.5em;
+}
+  

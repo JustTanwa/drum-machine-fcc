@@ -1,38 +1,39 @@
 import React from "react";
+import DrumPad from './components/DrumPad.js'
 
 const drumKit_1 = [
   {
-    keyId: "Heater-1",
+    keyId: "Heater 1",
    keyboard: "Q",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
   },
   {
-    keyId: "Heater-2",
+    keyId: "Heater 2",
    keyboard: "W",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
   },
   {
-    keyId: "Heater-3",
+    keyId: "Heater 3",
    keyboard: "E",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
   },
   {
-    keyId: "Heater-4",
+    keyId: "Heater 4",
    keyboard: "A",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
   },
   {
-    keyId: "Heater-6",
+    keyId: "Clap",
    keyboard: "S",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
   },
   {
-    keyId: "Snare",
+    keyId: "Open HH",
    keyboard: "D",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
   },
   {
-    keyId: "KicknHat",
+    keyId: "Kick & Hat",
    keyboard: "Z",   
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
   },
@@ -42,24 +43,24 @@ const drumKit_1 = [
   sound: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
   },
   {
-    keyId: "HighHat",
+    keyId: "Closed HH",
    keyboard: "C",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
   },
 ]
 const drumKit_2 = [
   {
-    keyId: "Chord-1",
+    keyId: "Chord 1",
    keyboard: "Q",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3"
   },
   {
-    keyId: "Chord-2",
+    keyId: "Chord 2",
    keyboard: "W",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3"
   },
   {
-    keyId: "Chord-3",
+    keyId: "Chord 3",
    keyboard: "E",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3"
   },
@@ -69,12 +70,12 @@ const drumKit_2 = [
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3"
   },
   {
-    keyId: "Snare-2",
+    keyId: "Open HH",
    keyboard: "S",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3"
   },
   {
-    keyId: "HighHat2",
+    keyId: "Closed HH",
    keyboard: "D",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3"
   },
@@ -89,7 +90,7 @@ const drumKit_2 = [
   sound: "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3"
   },
   {
-    keyId: "Snare3",
+    keyId: "Snare",
    keyboard: "C",
   sound: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3"
   }

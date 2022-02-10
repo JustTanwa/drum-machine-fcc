@@ -3,8 +3,13 @@ import React from "react";
 class DrumPad extends React.Component {
     constructor(props) {
       super(props);
+      this.state = {
+        currentDrum: "Placeholder",
+      }
       this.handleKeyPress = this.handleKeyPress.bind(this);
       this.playAudio = this.playAudio.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+      this.updateDisplay = this.updateDisplay.bind(this);
     }
     componentDidMount(){
       document.addEventListener('keydown', this.handleKeyPress)
@@ -49,22 +54,37 @@ class DrumPad extends React.Component {
     playAudio(key) {
       // play sound on button press
       const audio = document.getElementById(key);
-      console.log(audio);
+      const display = audio.parentElement.id;
       audio.currentTime = 0;
       audio.play();
+      this.updateDisplay(display);
+    }
+    updateDisplay(display) {
+      this.setState({
+        currentDrum: display,
+      })
     }
     handleClick(e) {
       // plays sound on click
-      e.target.firstElementChild.currentTime = 0;
-      e.target.firstElementChild.play();
+      const elem = e.target
+      const display = elem.id;
+      elem.firstElementChild.currentTime = 0;
+      elem.firstElementChild.play();
+      this.updateDisplay(display);
     }
     
     render() {
       return (
       <div id="display">
           {this.props.drumKit.map((obj) => <button className="drum-pad" id={obj.keyId} onClick={this.handleClick}>{obj.keyboard}<audio className="clip" id={obj.keyboard} src={obj.sound}></audio></button>)}
-          <p className="display"></p>
+          <div className="display">
+            <p className="drum-sound">{this.state.currentDrum}</p>
+            <label for="volume"> Volume:</label>
+            <input type="range" id="volume" name="volume" min="0" max="1" step="0.1"/>
+          </div>
       </div>
       )
     }
   }
+
+export default DrumPad;
