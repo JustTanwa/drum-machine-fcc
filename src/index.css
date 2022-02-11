@@ -20,11 +20,24 @@ body {
 .title {
   text-align: center;
 }
+
+#display {  
+  margin-top: 2%;
+}
+
+.switch {
+  margin-top: 25%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
 .button-container {
-  background: blue;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 
@@ -38,11 +51,85 @@ body {
   margin: 2px auto;
 }
 
+button:hover, button:focus, button:active {
+  outline: none;
+  color: red;
+}
+.click {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin: 2px auto;
+}
+.row.display {
+  height: 50%;
+}
+
 .drum-sound {
   width: 200px;
   height: 70px;
-  background: red;
   text-align: center;
-  padding-top: 1.5em;
+  padding-top: 1.25em;
+  border: 2px solid black;
+  border-radius: 10px;
 }
-  
+
+.row.volume {
+  width: 200px;
+  height: 50%;
+  padding-top: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.volControl {
+  text-align: center;
+  background:
+}
+
+#volume {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 8px;
+  border-radius: 5px;  
+  background: white;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: 0 auto;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  background: black;
+  cursor: pointer;
+}
+
+#volume:hover {
+  opacity: 1; 
+}
+
+#volume::-moz-range-thumb {
+  /*for FireFox*/
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  background: black;
+  cursor: pointer;
+}
+
+.volControl {
+  display: block;
+  width: 100%;
+  text-align: center;
+}

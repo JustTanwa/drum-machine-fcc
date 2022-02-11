@@ -110,10 +110,12 @@ class App extends React.Component {
   }
   render() {
     return (
-    <div className="container" id="drum-machine">
-        <h1 className="title"> Super drum machine </h1>
+    <div className="main" id="drum-machine">
+        <h1 className="title"> Da-da-Drum Machi-chine </h1>
+        <div className="container mb-2 text-center">
+          <button className="switch" onClick={this.handleClick}>Switch Kit</button>
+        </div>
         <DrumPad drumKit={this.state.currentKit}/>
-        <button className="switch" onClick={this.handleClick}>Kit Switch</button>
     </div>
     );
   }

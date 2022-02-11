@@ -4,11 +4,12 @@ class DrumPad extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        currentDrum: "Placeholder",
+        currentDrum: " ",
       }
       this.handleKeyPress = this.handleKeyPress.bind(this);
       this.playAudio = this.playAudio.bind(this);
       this.handleClick = this.handleClick.bind(this);
+      this.handleChange = this.handleChange.bind(this);
       this.updateDisplay = this.updateDisplay.bind(this);
     }
     componentDidMount(){
@@ -54,6 +55,10 @@ class DrumPad extends React.Component {
     playAudio(key) {
       // play sound on button press
       const audio = document.getElementById(key);
+      audio.parentElement.className= "click"; 
+      setTimeout(()=>{
+        audio.parentElement.className= "drum-pad"; 
+      }, 100)
       const display = audio.parentElement.id;
       audio.currentTime = 0;
       audio.play();
@@ -67,20 +72,52 @@ class DrumPad extends React.Component {
     handleClick(e) {
       // plays sound on click
       const elem = e.target
+      elem.className= "click"; 
+      setTimeout(()=>{
+        elem.className= "drum-pad"; 
+      }, 100)
       const display = elem.id;
       elem.firstElementChild.currentTime = 0;
       elem.firstElementChild.play();
       this.updateDisplay(display);
     }
+    handleChange(e) {
+      const volume = e.target.value;
+      console.log(volume);
+      const audio = document.getElementsByTagName('audio');
+      console.log(typeof audio);
+      for (let i = 0; i < 9; i++) {
+        audio[i].volume = volume;
+      }
+    }
     
     render() {
       return (
       <div id="display">
-          {this.props.drumKit.map((obj) => <button className="drum-pad" id={obj.keyId} onClick={this.handleClick}>{obj.keyboard}<audio className="clip" id={obj.keyboard} src={obj.sound}></audio></button>)}
-          <div className="display">
-            <p className="drum-sound">{this.state.currentDrum}</p>
-            <label for="volume"> Volume:</label>
-            <input type="range" id="volume" name="volume" min="0" max="1" step="0.1"/>
+          <div className="row">
+            <div className="col-sm-3 offset-sm-3">
+              <div className="button-container">
+                {this.props.drumKit.map((obj, index) => 
+                                          <button className="drum-pad" id={obj.keyId} onClick={this.handleClick}>
+                                            {obj.keyboard}
+                                            <audio className="clip" id={obj.keyboard} src={obj.sound}></audio>
+                                          </button>
+                                        )}
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="row display">
+                <p className="drum-sound">{this.state.currentDrum}</p>
+              </div>
+              <div className="row volume">
+                <label className="volControl" for="volume">Volume Control</label>
+                <input type="range" id="volume" name="volume" min="0" max="1" defaultValue="0.5" step="0.1" onChange={this.handleChange}></input>
+              </div>
+              <div className="display">
+                
+                
+              </div>
+            </div>
           </div>
       </div>
       )
